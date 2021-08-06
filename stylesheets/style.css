@@ -1,0 +1,41 @@
+body {
+    /*overflow: hidden;*/
+    overflow-x: hidden;
+}
+
+.section-container {
+    height: 100vh !important;
+}
+
+#intro-page, #land-use-chart-page {
+    padding: 5%;
+}
+
+#start-page {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, .6)), url("../img/wedza-header.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+#start-page > div {
+    position: absolute;
+    top: 35vh;
+}
+
+#start-page * {
+    color: white;
+}
+
+#intro-page .card {
+    width: 20em;
+}
+
+#intro-page .intro-description {
+    font-size: 1.5em;
+}
+
+#sankey-chart {
+    width: 100%;
+    height: 16em;
+}
