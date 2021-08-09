@@ -33,63 +33,57 @@ const EASE_ANIMATION = {
 };
 // land use graph
 var landusegraph_selector, landusegraph;
-var landusegraph_options = {
-  type:'line',
-  data:{
-    labels:[...Array(CHART_SIZE).keys()],
-    datasets:LAND_USE_GRAPH_DATASETS
+const landusegraph_options = {
+  type: 'line',
+  data: {
+    labels: [...Array(CHART_SIZE).keys()],
+    datasets: LAND_USE_GRAPH_DATASETS
   },
-  options:{
+  options: {
     EASE_ANIMATION,
     interaction: {
       intersect: false
     },
     responsive: true,
-    title:{
+    title: {
       display: true,
-      fontSize:25
+      fontSize: 25
     },
-    plugins:{
-      legend:{
-        display:false,
-        position:'right',
-        labels:{
+    plugins: {
+      legend: {
+        display: false,
+        position: 'right',
+        labels: {
           fontColor: '#000'
         }
       }
     },
-    tooltips:{
-      enabled:false
+    tooltips: {
+      enabled: false
     },
     scales: {
       x: {
         type: "linear",
       },
       y: {
-        min: 0,      
+        min: 0,
         max: 100,
         grid: {
           display: false
         }
       }
     }
-}
+  }
 };
-
-// woodland change graph
-var woodlandcovergraph, woodlandcovergraph_selector;
-const woodlandcovergraph_options = {};
-
 
 function createChart() {
   landusegraph_selector = document.getElementById('landusegraph').getContext('2d');
-  
   landusegraph = new Chart(landusegraph_selector, landusegraph_options);
 }
 
 function startLoop() {
-  document.querySelector('.intro-page').scrollIntoView({ 
-    behavior: 'smooth' 
+  document.querySelector('.intro-page').scrollIntoView({
+    behavior: 'smooth'
   });
   //movementLoop();
 }

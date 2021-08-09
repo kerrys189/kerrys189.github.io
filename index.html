@@ -1,6 +1,7 @@
 <!doctype html>
 
 <head>
+    <title>Three Decades of Woodland Change in Wedza, Zimbabwe</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -24,23 +25,28 @@
 <body onload="navigate('start')">
     <div class="section-container" id="start-page">
         <div class="text-center col-md-6 offset-md-3">
-            <h1>Welcome to the site.</h1>
-            <p class="lead">Three Decades of Woodland Change in Wedza, Zimbabwe</p>
-            <button type="button" class="btn btn-primary" onClick="navigate('intro');">Start!</button>
+            <h1>Three Decades of Woodland Change in Wedza, Zimbabwe</h1>
+            <button type="button" class="btn btn-link" onClick="navigate('intro');">
+                <p class="lead">Click to find out more</p>
+            </button>
         </div>
     </div>
     <div class="section-container" id="intro-page">
         <div class="row">
-            <div class="col intro-description">
-                <p>
-                    Land Cover is intricately linked to livelihoods and sustainable management of natural resources.
-                </p>
-                <p>
-                    To understand how land cover is changing we used Landsat data between 1990 and 2020.
-                </p>
-                <p>Take a closer look <a onclick="navigate('land-use-charts')"><i class="bi bi-arrow-down"></i></a></p>
+            <div class="col-md-6 col-sm-12 description">
+                <div class="container">
+                    <p>
+                        Land Cover is intricately linked to livelihoods and sustainable management of natural resources.
+                    </p>
+                    <p>
+                        To understand how land cover is changing we used Landsat data between 1990 and 2020.
+                    </p>
+                    <img class="card-img" src="https://via.placeholder.com/250" style="height: 250px; width: 250px;">
+                </div>
+                <button class="btn btn-link" onclick="navigate('land-use-charts')">Take a closer look <i
+                        class="bi bi-arrow-down"></i></button>
             </div>
-            <div class="col">
+            <div class="col-md-6 col-sm-12">
                 <div class="card" onmouseover="showCollapse('#intro-why-wedza-expanded')"
                     onmouseout="hideCollapse('#intro-why-wedza-expanded')">
                     <div class="card-body">
@@ -48,8 +54,7 @@
                         <img class="card-img" src="https://via.placeholder.com/150">
                         <div class="collapse" id="intro-why-wedza-expanded">
                             <p>
-                                Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah blah Blah blah
-                                blah Blah blah blah
+                                This section will contain information about the decision to choose Wedza.
                             </p>
                         </div>
                     </div>
@@ -59,26 +64,101 @@
     </div>
     <div class="section-container" id="land-use-chart-page">
         <div class="row">
-            <div class="col">
+            <div class="col-md-6 col-sm-12">
                 <button onclick="reset()">Reset</button>
                 <canvas id="landusegraph"></canvas>
                 <iframe src="sankey.html" id="sankey-chart"></iframe>
             </div>
-            <div class="col">
-                <p>Lets take a closer look at how woodland cover has changed.</p>
-                <button class="btn btn-primary"><i class="bi bi-arrow-down"></i></button>
+            <div class="col-md-6 col-sm-12 description">
+                <button class="btn btn-link" onclick="navigate('woodland-use')">
+                    <p>Lets take a closer look at how woodland cover has changed. <i class="bi bi-arrow-down"></i></p>
+                </button>
             </div>
         </div>
     </div>
-    <div class="section-container" id="land-use-chart-page">
+    <div class="section-container" id="woodland-use-page">
         <div class="row">
-            <div class="col">
-                <canvas id="woodlandcovergraph"></canvas>
-                <iframe src="sankey.html" id="sankey-chart"></iframe>
+            <div class="col-md-6 col-sm-12">
+                <p><b>Woodland cover has transitioned</b> from net deforestation to net expansion.</p>
+                <div class="row">
+                    <div class="col col-lg-10 col-md-12">
+                        <img src="https://via.placeholder.com/600x200" width="100%" />
+                    </div>
+                    <div class="col-lg-2 col-md-12">
+                        <p>But...</p>
+                    </div>
+                </div>
             </div>
-            <div class="col">
-                <p>Lets take a closer look at how woodland cover has changed.</p>
-                <button class="btn btn-primary"><i class="bi bi-arrow-down"></i></button>
+            <div class="col-md-6 col-sm-12">
+                <p>Woodland has not regrown in the same place it was lost from.</p>
+                <img src="https://via.placeholder.com/600x200" width="100%" />
+                <button class="btn btn-link">What does this mean for access to woodland areas?</button>
+                <ul>
+                    <li>Area of woodland within 3km of households has increased</li>
+                    <li>Distance to nearest woodland path (over 0.5ha) has decreased</li>
+                </ul>
+                <button class="btn btn-link" onclick="navigate('local-perceptions')"><i
+                        class="bi bi-arrow-down"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="section-container" id="local-perceptions-page">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="container">
+                    <h3>Does this match local perceptions?</h3>
+                    <p>We interviewed eleven key informants who were researchers, farmers, teachers, and village heads.
+                    </p>
+                    <p>The results did not match the findings from remote sensing.</p>
+                    <p><b>10 out of 11</b> said access to woodland resources were <b>limiting.</b></p>
+                    <p>and</p>
+                    <p><b>9 out of 11</b> said access to woodland resources was <b>decreasing.</b></p>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="card why-results-disagree-card" onmouseover="showCollapse('#why-results-disagree')"
+                    onmouseout="hideCollapse('#why-results-disagree')">
+                    <div class="card-body">
+                        <h5 class="card-title">Why do remote sensing and interview results disagree?</h5>
+                        <div class="collapse" id="why-results-disagree">
+                            <p>
+                                This section will contain information about why remote sensing and interview results
+                                disagree.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="container">
+                    <h3>Lets look at the woodland transition again</h3>
+                    <img src="https://via.placeholder.com/600x200" width="100%" />
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="container">
+                    <p>Why do we see this pattern?</p>
+                    <p>Interview participants said that environmental change, government inputs, farm resettlement, increasing in mining, and changing farming practices played a part in land cover change. Tobacco farming was especially linked to woodland loss in the <a href="#">resettlement area.</a></p>
+                    <button class="btn btn-link" onclick="navigate('conclusion')"><i
+                        class="bi bi-arrow-down"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-container" id="conclusion-page">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <p>Notably, there was no evidence from interviews that scarcity of woodland resources has led to replanting of trees...</p>
+                <p>... but there was evidence that off-farm employment was important in reducing pressure on the land, enabling woodland regrowth.</p>
+                <p>Meyfroidt and Lambin propose that endogenous socio-ecological forces are more important than endogenous socio-economic factors in <b>???</b> woodland transitions</p>
+                <img src="https://via.placeholder.com/600x200" width="100%" />
+                
+                
+            </div>
+            <div class="col-md-6 col-sm-12 description">
+                
             </div>
         </div>
     </div>

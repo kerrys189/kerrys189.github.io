@@ -3,11 +3,12 @@ body {
     overflow-x: hidden;
 }
 
-.section-container {
-    height: 100vh !important;
+p {
+    font-size: 1.25em;
 }
 
-#intro-page, #land-use-chart-page {
+.section-container {
+    height: 100vh !important;
     padding: 5%;
 }
 
@@ -16,6 +17,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
+    padding: 0;
 }
 
 #start-page > div {
@@ -31,11 +33,15 @@ body {
     width: 20em;
 }
 
-#intro-page .intro-description {
+.description {
     font-size: 1.5em;
 }
 
 #sankey-chart {
     width: 100%;
     height: 16em;
+}
+
+.why-results-disagree-card {
+    width: 40%;
 }
